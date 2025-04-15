@@ -2,7 +2,7 @@
 
 ## Traffic Incident Analysis System Across All US States
 
-![Project Architecture](architecture-diagram.png)
+![Project Architecture](https://github.com/VietDucFCB/PythonForDS/blob/master/diagram.png)
 
 ## Project Overview
 
@@ -17,7 +17,7 @@ IncidentMapper-USA is a comprehensive data engineering and analysis project that
 - **Visualization:** Apache Superset for dashboards and heatmap visualizations
 - **Deployment:** Containerized with Docker for scalability and portability
 
-![Data Pipeline](data-pipeline.png)
+![Data Pipeline](https://github.com/VietDucFCB/PythonForDS/blob/master/pipeline.png)
 
 ## Features
 
