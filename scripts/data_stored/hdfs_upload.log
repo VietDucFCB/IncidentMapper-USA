@@ -1,0 +1,249 @@
+2025-04-14 12:20:01,136 - INFO - Starting data upload for user VietDucFCB at 2025-04-14 12:20:01
+2025-04-14 12:20:01,137 - INFO - Running: docker exec namenode hdfs dfsadmin -report
+2025-04-14 12:20:03,089 - INFO - Command succeeded
+2025-04-14 12:20:03,090 - INFO - Found 2 live datanodes
+2025-04-14 12:20:03,090 - INFO - Running: docker exec namenode hdfs dfs -mkdir -p /data_lake/raw/traffic_data/us
+2025-04-14 12:20:05,148 - INFO - Command succeeded
+2025-04-14 12:20:05,149 - INFO - Running: docker exec namenode mkdir -p /tmp/traffic_data_20250414122005
+2025-04-14 12:20:05,287 - INFO - Command succeeded
+2025-04-14 12:20:05,288 - INFO - Copying JSON files from C:/Users/kkagi/Downloads/CarIncidents/scripts/get_data/us_traffic_data_20250401_211449 to Docker container
+2025-04-14 12:20:05,288 - INFO - Running: docker cp "C:/Users/kkagi/Downloads/CarIncidents/scripts/get_data/us_traffic_data_20250401_211449/." namenode:/tmp/traffic_data_20250414122005/
+2025-04-14 12:20:15,055 - INFO - Command succeeded
+2025-04-14 12:20:15,055 - INFO - Running: docker exec namenode ls -1 /tmp/traffic_data_20250414122005 | grep .json
+2025-04-14 12:20:15,083 - ERROR - Command failed with exit code 255
+2025-04-14 12:20:15,083 - ERROR - Error: 'grep' is not recognized as an internal or external command,
+operable program or batch file.
+
+2025-04-14 12:20:15,083 - ERROR - No JSON files found in temporary directory
+2025-04-14 12:20:15,083 - INFO - Running: docker exec namenode rm -rf /tmp/traffic_data_20250414122005
+2025-04-14 12:20:15,210 - INFO - Command succeeded
+2025-04-14 12:21:36,636 - INFO - Starting data upload for user VietDucFCB at 2025-04-14 12:21:36
+2025-04-14 12:21:36,637 - INFO - Running: docker exec namenode hdfs dfsadmin -report
+2025-04-14 12:21:38,388 - INFO - Command succeeded
+2025-04-14 12:21:38,388 - INFO - Found 2 live datanodes
+2025-04-14 12:21:38,389 - INFO - Running: docker exec namenode hdfs dfs -mkdir -p /data_lake/raw/traffic_data/us
+2025-04-14 12:21:40,376 - INFO - Command succeeded
+2025-04-14 12:21:40,377 - INFO - Running: docker exec namenode mkdir -p /tmp/traffic_data_20250414122140
+2025-04-14 12:21:40,487 - INFO - Command succeeded
+2025-04-14 12:21:40,487 - INFO - Copying JSON files from C:/Users/kkagi/Downloads/CarIncidents/scripts/get_data/us_traffic_data_20250401_211449 to Docker container
+2025-04-14 12:21:40,488 - INFO - Running: docker cp "C:/Users/kkagi/Downloads/CarIncidents/scripts/get_data/us_traffic_data_20250401_211449/." namenode:/tmp/traffic_data_20250414122140/
+2025-04-14 12:21:51,107 - INFO - Command succeeded
+2025-04-14 12:21:51,108 - INFO - Running: docker exec namenode ls -1 /tmp/traffic_data_20250414122140
+2025-04-14 12:21:51,202 - INFO - Command succeeded
+2025-04-14 12:21:51,202 - INFO - Found 52 JSON files to upload
+2025-04-14 12:21:51,203 - INFO - Uploading Alabama_traffic.json...
+2025-04-14 12:21:51,203 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Alabama_traffic.json" "/data_lake/raw/traffic_data/us/Alabama_traffic.json"
+2025-04-14 12:21:57,031 - INFO - Command succeeded
+2025-04-14 12:21:57,031 - INFO - Successfully uploaded Alabama_traffic.json (1/52)
+2025-04-14 12:21:57,033 - INFO - Uploading Arizona_traffic.json...
+2025-04-14 12:21:57,033 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Arizona_traffic.json" "/data_lake/raw/traffic_data/us/Arizona_traffic.json"
+2025-04-14 12:21:59,648 - INFO - Command succeeded
+2025-04-14 12:21:59,649 - INFO - Successfully uploaded Arizona_traffic.json (2/52)
+2025-04-14 12:21:59,650 - INFO - Uploading Arkansas_traffic.json...
+2025-04-14 12:21:59,651 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Arkansas_traffic.json" "/data_lake/raw/traffic_data/us/Arkansas_traffic.json"
+2025-04-14 12:22:01,894 - INFO - Command succeeded
+2025-04-14 12:22:01,895 - INFO - Successfully uploaded Arkansas_traffic.json (3/52)
+2025-04-14 12:22:01,895 - INFO - Uploading California_traffic.json...
+2025-04-14 12:22:01,896 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/California_traffic.json" "/data_lake/raw/traffic_data/us/California_traffic.json"
+2025-04-14 12:22:04,118 - INFO - Command succeeded
+2025-04-14 12:22:04,120 - INFO - Successfully uploaded California_traffic.json (4/52)
+2025-04-14 12:22:04,120 - INFO - Uploading Colorado_traffic.json...
+2025-04-14 12:22:04,121 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Colorado_traffic.json" "/data_lake/raw/traffic_data/us/Colorado_traffic.json"
+2025-04-14 12:22:06,384 - INFO - Command succeeded
+2025-04-14 12:22:06,386 - INFO - Successfully uploaded Colorado_traffic.json (5/52)
+2025-04-14 12:22:06,386 - INFO - Uploading Connecticut_traffic.json...
+2025-04-14 12:22:06,387 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Connecticut_traffic.json" "/data_lake/raw/traffic_data/us/Connecticut_traffic.json"
+2025-04-14 12:22:14,435 - INFO - Command succeeded
+2025-04-14 12:22:14,435 - INFO - Successfully uploaded Connecticut_traffic.json (6/52)
+2025-04-14 12:22:14,436 - INFO - Uploading Delaware_traffic.json...
+2025-04-14 12:22:14,436 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Delaware_traffic.json" "/data_lake/raw/traffic_data/us/Delaware_traffic.json"
+2025-04-14 12:22:16,580 - INFO - Command succeeded
+2025-04-14 12:22:16,580 - INFO - Successfully uploaded Delaware_traffic.json (7/52)
+2025-04-14 12:22:16,581 - INFO - Uploading District_of_Columbia_traffic.json...
+2025-04-14 12:22:16,581 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/District_of_Columbia_traffic.json" "/data_lake/raw/traffic_data/us/District_of_Columbia_traffic.json"
+2025-04-14 12:22:18,763 - INFO - Command succeeded
+2025-04-14 12:22:18,765 - INFO - Successfully uploaded District_of_Columbia_traffic.json (8/52)
+2025-04-14 12:22:18,766 - INFO - Uploading Florida_traffic.json...
+2025-04-14 12:22:18,766 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Florida_traffic.json" "/data_lake/raw/traffic_data/us/Florida_traffic.json"
+2025-04-14 12:22:21,111 - INFO - Command succeeded
+2025-04-14 12:22:21,111 - INFO - Successfully uploaded Florida_traffic.json (9/52)
+2025-04-14 12:22:21,112 - INFO - Uploading Georgia_traffic.json...
+2025-04-14 12:22:21,113 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Georgia_traffic.json" "/data_lake/raw/traffic_data/us/Georgia_traffic.json"
+2025-04-14 12:22:23,363 - INFO - Command succeeded
+2025-04-14 12:22:23,363 - INFO - Successfully uploaded Georgia_traffic.json (10/52)
+2025-04-14 12:22:23,363 - INFO - Uploading Hawaii_traffic.json...
+2025-04-14 12:22:23,364 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Hawaii_traffic.json" "/data_lake/raw/traffic_data/us/Hawaii_traffic.json"
+2025-04-14 12:22:25,413 - INFO - Command succeeded
+2025-04-14 12:22:25,414 - INFO - Successfully uploaded Hawaii_traffic.json (11/52)
+2025-04-14 12:22:25,414 - INFO - Uploading Idaho_traffic.json...
+2025-04-14 12:22:25,415 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Idaho_traffic.json" "/data_lake/raw/traffic_data/us/Idaho_traffic.json"
+2025-04-14 12:22:27,663 - INFO - Command succeeded
+2025-04-14 12:22:27,663 - INFO - Successfully uploaded Idaho_traffic.json (12/52)
+2025-04-14 12:22:27,664 - INFO - Uploading Illinois_traffic.json...
+2025-04-14 12:22:27,664 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Illinois_traffic.json" "/data_lake/raw/traffic_data/us/Illinois_traffic.json"
+2025-04-14 12:22:29,986 - INFO - Command succeeded
+2025-04-14 12:22:29,987 - INFO - Successfully uploaded Illinois_traffic.json (13/52)
+2025-04-14 12:22:29,987 - INFO - Uploading Indiana_traffic.json...
+2025-04-14 12:22:29,988 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Indiana_traffic.json" "/data_lake/raw/traffic_data/us/Indiana_traffic.json"
+2025-04-14 12:22:32,243 - INFO - Command succeeded
+2025-04-14 12:22:32,243 - INFO - Successfully uploaded Indiana_traffic.json (14/52)
+2025-04-14 12:22:32,243 - INFO - Uploading Iowa_traffic.json...
+2025-04-14 12:22:32,243 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Iowa_traffic.json" "/data_lake/raw/traffic_data/us/Iowa_traffic.json"
+2025-04-14 12:22:34,527 - INFO - Command succeeded
+2025-04-14 12:22:34,527 - INFO - Successfully uploaded Iowa_traffic.json (15/52)
+2025-04-14 12:22:34,528 - INFO - Uploading Kansas_traffic.json...
+2025-04-14 12:22:34,529 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Kansas_traffic.json" "/data_lake/raw/traffic_data/us/Kansas_traffic.json"
+2025-04-14 12:22:36,697 - INFO - Command succeeded
+2025-04-14 12:22:36,698 - INFO - Successfully uploaded Kansas_traffic.json (16/52)
+2025-04-14 12:22:36,698 - INFO - Uploading Kentucky_traffic.json...
+2025-04-14 12:22:36,698 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Kentucky_traffic.json" "/data_lake/raw/traffic_data/us/Kentucky_traffic.json"
+2025-04-14 12:22:41,739 - INFO - Command succeeded
+2025-04-14 12:22:41,739 - INFO - Successfully uploaded Kentucky_traffic.json (17/52)
+2025-04-14 12:22:41,740 - INFO - Uploading Louisiana_traffic.json...
+2025-04-14 12:22:41,740 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Louisiana_traffic.json" "/data_lake/raw/traffic_data/us/Louisiana_traffic.json"
+2025-04-14 12:22:44,571 - INFO - Command succeeded
+2025-04-14 12:22:44,571 - INFO - Successfully uploaded Louisiana_traffic.json (18/52)
+2025-04-14 12:22:44,572 - INFO - Uploading Maine_traffic.json...
+2025-04-14 12:22:44,572 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Maine_traffic.json" "/data_lake/raw/traffic_data/us/Maine_traffic.json"
+2025-04-14 12:22:46,922 - INFO - Command succeeded
+2025-04-14 12:22:46,922 - INFO - Successfully uploaded Maine_traffic.json (19/52)
+2025-04-14 12:22:46,922 - INFO - Uploading Maryland_traffic.json...
+2025-04-14 12:22:46,922 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Maryland_traffic.json" "/data_lake/raw/traffic_data/us/Maryland_traffic.json"
+2025-04-14 12:22:49,299 - INFO - Command succeeded
+2025-04-14 12:22:49,300 - INFO - Successfully uploaded Maryland_traffic.json (20/52)
+2025-04-14 12:22:49,300 - INFO - Uploading Massachusetts_traffic.json...
+2025-04-14 12:22:49,300 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Massachusetts_traffic.json" "/data_lake/raw/traffic_data/us/Massachusetts_traffic.json"
+2025-04-14 12:22:51,615 - INFO - Command succeeded
+2025-04-14 12:22:51,616 - INFO - Successfully uploaded Massachusetts_traffic.json (21/52)
+2025-04-14 12:22:51,616 - INFO - Uploading Michigan_traffic.json...
+2025-04-14 12:22:51,616 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Michigan_traffic.json" "/data_lake/raw/traffic_data/us/Michigan_traffic.json"
+2025-04-14 12:22:54,337 - INFO - Command succeeded
+2025-04-14 12:22:54,337 - INFO - Successfully uploaded Michigan_traffic.json (22/52)
+2025-04-14 12:22:54,338 - INFO - Uploading Minnesota_traffic.json...
+2025-04-14 12:22:54,338 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Minnesota_traffic.json" "/data_lake/raw/traffic_data/us/Minnesota_traffic.json"
+2025-04-14 12:22:56,709 - INFO - Command succeeded
+2025-04-14 12:22:56,709 - INFO - Successfully uploaded Minnesota_traffic.json (23/52)
+2025-04-14 12:22:56,710 - INFO - Uploading Mississippi_traffic.json...
+2025-04-14 12:22:56,710 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Mississippi_traffic.json" "/data_lake/raw/traffic_data/us/Mississippi_traffic.json"
+2025-04-14 12:22:59,109 - INFO - Command succeeded
+2025-04-14 12:22:59,109 - INFO - Successfully uploaded Mississippi_traffic.json (24/52)
+2025-04-14 12:22:59,109 - INFO - Uploading Missouri_traffic.json...
+2025-04-14 12:22:59,109 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Missouri_traffic.json" "/data_lake/raw/traffic_data/us/Missouri_traffic.json"
+2025-04-14 12:23:01,388 - INFO - Command succeeded
+2025-04-14 12:23:01,389 - INFO - Successfully uploaded Missouri_traffic.json (25/52)
+2025-04-14 12:23:01,389 - INFO - Uploading Montana_traffic.json...
+2025-04-14 12:23:01,390 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Montana_traffic.json" "/data_lake/raw/traffic_data/us/Montana_traffic.json"
+2025-04-14 12:23:03,694 - INFO - Command succeeded
+2025-04-14 12:23:03,695 - INFO - Successfully uploaded Montana_traffic.json (26/52)
+2025-04-14 12:23:03,695 - INFO - Uploading Nebraska_traffic.json...
+2025-04-14 12:23:03,695 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Nebraska_traffic.json" "/data_lake/raw/traffic_data/us/Nebraska_traffic.json"
+2025-04-14 12:23:05,946 - INFO - Command succeeded
+2025-04-14 12:23:05,948 - INFO - Successfully uploaded Nebraska_traffic.json (27/52)
+2025-04-14 12:23:05,948 - INFO - Uploading Nevada_traffic.json...
+2025-04-14 12:23:05,948 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Nevada_traffic.json" "/data_lake/raw/traffic_data/us/Nevada_traffic.json"
+2025-04-14 12:23:08,195 - INFO - Command succeeded
+2025-04-14 12:23:08,195 - INFO - Successfully uploaded Nevada_traffic.json (28/52)
+2025-04-14 12:23:08,196 - INFO - Uploading New_Hampshire_traffic.json...
+2025-04-14 12:23:08,196 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/New_Hampshire_traffic.json" "/data_lake/raw/traffic_data/us/New_Hampshire_traffic.json"
+2025-04-14 12:23:10,379 - INFO - Command succeeded
+2025-04-14 12:23:10,380 - INFO - Successfully uploaded New_Hampshire_traffic.json (29/52)
+2025-04-14 12:23:10,380 - INFO - Uploading New_Jersey_traffic.json...
+2025-04-14 12:23:10,380 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/New_Jersey_traffic.json" "/data_lake/raw/traffic_data/us/New_Jersey_traffic.json"
+2025-04-14 12:23:12,682 - INFO - Command succeeded
+2025-04-14 12:23:12,682 - INFO - Successfully uploaded New_Jersey_traffic.json (30/52)
+2025-04-14 12:23:12,682 - INFO - Uploading New_Mexico_traffic.json...
+2025-04-14 12:23:12,683 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/New_Mexico_traffic.json" "/data_lake/raw/traffic_data/us/New_Mexico_traffic.json"
+2025-04-14 12:23:14,793 - INFO - Command succeeded
+2025-04-14 12:23:14,794 - INFO - Successfully uploaded New_Mexico_traffic.json (31/52)
+2025-04-14 12:23:14,794 - INFO - Uploading New_York_traffic.json...
+2025-04-14 12:23:14,795 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/New_York_traffic.json" "/data_lake/raw/traffic_data/us/New_York_traffic.json"
+2025-04-14 12:23:17,054 - INFO - Command succeeded
+2025-04-14 12:23:17,055 - INFO - Successfully uploaded New_York_traffic.json (32/52)
+2025-04-14 12:23:17,056 - INFO - Uploading North_Carolina_traffic.json...
+2025-04-14 12:23:17,056 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/North_Carolina_traffic.json" "/data_lake/raw/traffic_data/us/North_Carolina_traffic.json"
+2025-04-14 12:23:19,316 - INFO - Command succeeded
+2025-04-14 12:23:19,317 - INFO - Successfully uploaded North_Carolina_traffic.json (33/52)
+2025-04-14 12:23:19,317 - INFO - Uploading North_Dakota_traffic.json...
+2025-04-14 12:23:19,317 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/North_Dakota_traffic.json" "/data_lake/raw/traffic_data/us/North_Dakota_traffic.json"
+2025-04-14 12:23:21,669 - INFO - Command succeeded
+2025-04-14 12:23:21,670 - INFO - Successfully uploaded North_Dakota_traffic.json (34/52)
+2025-04-14 12:23:21,670 - INFO - Uploading Ohio_traffic.json...
+2025-04-14 12:23:21,671 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Ohio_traffic.json" "/data_lake/raw/traffic_data/us/Ohio_traffic.json"
+2025-04-14 12:23:24,092 - INFO - Command succeeded
+2025-04-14 12:23:24,092 - INFO - Successfully uploaded Ohio_traffic.json (35/52)
+2025-04-14 12:23:24,092 - INFO - Uploading Oklahoma_traffic.json...
+2025-04-14 12:23:24,092 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Oklahoma_traffic.json" "/data_lake/raw/traffic_data/us/Oklahoma_traffic.json"
+2025-04-14 12:23:26,303 - INFO - Command succeeded
+2025-04-14 12:23:26,304 - INFO - Successfully uploaded Oklahoma_traffic.json (36/52)
+2025-04-14 12:23:26,304 - INFO - Uploading Oregon_traffic.json...
+2025-04-14 12:23:26,305 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Oregon_traffic.json" "/data_lake/raw/traffic_data/us/Oregon_traffic.json"
+2025-04-14 12:23:28,641 - INFO - Command succeeded
+2025-04-14 12:23:28,642 - INFO - Successfully uploaded Oregon_traffic.json (37/52)
+2025-04-14 12:23:28,642 - INFO - Uploading Pennsylvania_traffic.json...
+2025-04-14 12:23:28,643 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Pennsylvania_traffic.json" "/data_lake/raw/traffic_data/us/Pennsylvania_traffic.json"
+2025-04-14 12:23:31,082 - INFO - Command succeeded
+2025-04-14 12:23:31,082 - INFO - Successfully uploaded Pennsylvania_traffic.json (38/52)
+2025-04-14 12:23:31,082 - INFO - Uploading Rhode_Island_traffic.json...
+2025-04-14 12:23:31,083 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Rhode_Island_traffic.json" "/data_lake/raw/traffic_data/us/Rhode_Island_traffic.json"
+2025-04-14 12:23:33,400 - INFO - Command succeeded
+2025-04-14 12:23:33,401 - INFO - Successfully uploaded Rhode_Island_traffic.json (39/52)
+2025-04-14 12:23:33,401 - INFO - Uploading South_Carolina_traffic.json...
+2025-04-14 12:23:33,401 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/South_Carolina_traffic.json" "/data_lake/raw/traffic_data/us/South_Carolina_traffic.json"
+2025-04-14 12:23:35,435 - INFO - Command succeeded
+2025-04-14 12:23:35,436 - INFO - Successfully uploaded South_Carolina_traffic.json (40/52)
+2025-04-14 12:23:35,436 - INFO - Uploading South_Dakota_traffic.json...
+2025-04-14 12:23:35,436 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/South_Dakota_traffic.json" "/data_lake/raw/traffic_data/us/South_Dakota_traffic.json"
+2025-04-14 12:23:37,506 - INFO - Command succeeded
+2025-04-14 12:23:37,518 - INFO - Successfully uploaded South_Dakota_traffic.json (41/52)
+2025-04-14 12:23:37,529 - INFO - Uploading Tennessee_traffic.json...
+2025-04-14 12:23:37,531 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Tennessee_traffic.json" "/data_lake/raw/traffic_data/us/Tennessee_traffic.json"
+2025-04-14 12:23:39,776 - INFO - Command succeeded
+2025-04-14 12:23:39,776 - INFO - Successfully uploaded Tennessee_traffic.json (42/52)
+2025-04-14 12:23:39,778 - INFO - Uploading Texas_traffic.json...
+2025-04-14 12:23:39,778 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Texas_traffic.json" "/data_lake/raw/traffic_data/us/Texas_traffic.json"
+2025-04-14 12:23:42,123 - INFO - Command succeeded
+2025-04-14 12:23:42,124 - INFO - Successfully uploaded Texas_traffic.json (43/52)
+2025-04-14 12:23:42,125 - INFO - Uploading Utah_traffic.json...
+2025-04-14 12:23:42,125 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Utah_traffic.json" "/data_lake/raw/traffic_data/us/Utah_traffic.json"
+2025-04-14 12:23:44,415 - INFO - Command succeeded
+2025-04-14 12:23:44,415 - INFO - Successfully uploaded Utah_traffic.json (44/52)
+2025-04-14 12:23:44,415 - INFO - Uploading Vermont_traffic.json...
+2025-04-14 12:23:44,415 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Vermont_traffic.json" "/data_lake/raw/traffic_data/us/Vermont_traffic.json"
+2025-04-14 12:23:46,664 - INFO - Command succeeded
+2025-04-14 12:23:46,665 - INFO - Successfully uploaded Vermont_traffic.json (45/52)
+2025-04-14 12:23:46,666 - INFO - Uploading Virginia_traffic.json...
+2025-04-14 12:23:46,666 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Virginia_traffic.json" "/data_lake/raw/traffic_data/us/Virginia_traffic.json"
+2025-04-14 12:23:49,198 - INFO - Command succeeded
+2025-04-14 12:23:49,198 - INFO - Successfully uploaded Virginia_traffic.json (46/52)
+2025-04-14 12:23:49,198 - INFO - Uploading Washington_traffic.json...
+2025-04-14 12:23:49,199 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Washington_traffic.json" "/data_lake/raw/traffic_data/us/Washington_traffic.json"
+2025-04-14 12:23:51,291 - INFO - Command succeeded
+2025-04-14 12:23:51,291 - INFO - Successfully uploaded Washington_traffic.json (47/52)
+2025-04-14 12:23:51,291 - INFO - Uploading West_Virginia_traffic.json...
+2025-04-14 12:23:51,291 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/West_Virginia_traffic.json" "/data_lake/raw/traffic_data/us/West_Virginia_traffic.json"
+2025-04-14 12:23:53,914 - INFO - Command succeeded
+2025-04-14 12:23:53,915 - INFO - Successfully uploaded West_Virginia_traffic.json (48/52)
+2025-04-14 12:23:53,915 - INFO - Uploading Wisconsin_traffic.json...
+2025-04-14 12:23:53,915 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Wisconsin_traffic.json" "/data_lake/raw/traffic_data/us/Wisconsin_traffic.json"
+2025-04-14 12:23:56,114 - INFO - Command succeeded
+2025-04-14 12:23:56,115 - INFO - Successfully uploaded Wisconsin_traffic.json (49/52)
+2025-04-14 12:23:56,116 - INFO - Uploading Wyoming_traffic.json...
+2025-04-14 12:23:56,117 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/Wyoming_traffic.json" "/data_lake/raw/traffic_data/us/Wyoming_traffic.json"
+2025-04-14 12:23:58,378 - INFO - Command succeeded
+2025-04-14 12:23:58,379 - INFO - Successfully uploaded Wyoming_traffic.json (50/52)
+2025-04-14 12:23:58,380 - INFO - Uploading alaska_traffic.json...
+2025-04-14 12:23:58,381 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/alaska_traffic.json" "/data_lake/raw/traffic_data/us/alaska_traffic.json"
+2025-04-14 12:24:00,698 - INFO - Command succeeded
+2025-04-14 12:24:00,698 - INFO - Successfully uploaded alaska_traffic.json (51/52)
+2025-04-14 12:24:00,698 - INFO - Uploading all_us_traffic.json...
+2025-04-14 12:24:00,698 - INFO - Running: docker exec namenode hdfs dfs -put -f "/tmp/traffic_data_20250414122140/all_us_traffic.json" "/data_lake/raw/traffic_data/us/all_us_traffic.json"
+2025-04-14 12:24:03,693 - INFO - Command succeeded
+2025-04-14 12:24:03,693 - INFO - Successfully uploaded all_us_traffic.json (52/52)
+2025-04-14 12:24:03,694 - INFO - Verifying files in HDFS...
+2025-04-14 12:24:03,694 - INFO - Running: docker exec namenode hdfs dfs -ls /data_lake/raw/traffic_data/us
+2025-04-14 12:24:05,713 - INFO - Command succeeded
+2025-04-14 12:24:05,714 - INFO - Found 52 JSON files in HDFS target path
+2025-04-14 12:24:05,715 - INFO - Cleaning up temporary directory...
+2025-04-14 12:24:05,715 - INFO - Running: docker exec namenode rm -rf /tmp/traffic_data_20250414122140
+2025-04-14 12:24:05,995 - INFO - Command succeeded
+2025-04-14 12:24:05,996 - INFO - Upload process completed. 52/52 files uploaded.

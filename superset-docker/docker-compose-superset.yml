@@ -1,0 +1,60 @@
+version: '3'
+services:
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - redis:/data
+
+  db:
+    env_file: docker/.env-postgresql
+    image: postgres:14
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=superset
+      - POSTGRES_USER=superset
+      - POSTGRES_DB=superset
+
+  superset:
+    env_file: docker/.env-superset
+    image: apache/superset:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./superset_home:/app/superset_home
+      - ./docker/pythonpath_dev:/app/pythonpath
+      - ./docker/init:/app/docker-init
+
+  superset-init:
+    image: apache/superset:latest
+    depends_on:
+      - db
+      - redis
+    env_file: docker/.env-superset
+    volumes:
+      - ./docker/init:/app/docker-init
+    command: >
+      bash -c "/app/docker-init/superset-init.sh"
+
+  superset-worker:
+    env_file: docker/.env-superset
+    image: apache/superset:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./superset_home:/app/superset_home
+      - ./docker/pythonpath_dev:/app/pythonpath
+    command: >
+      celery --app=superset.tasks.celery_app:app worker -Ofair -l INFO
+
+volumes:
+  redis:
+  db_data:
