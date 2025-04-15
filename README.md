@@ -19,6 +19,34 @@ IncidentMapper-USA is a comprehensive data engineering and analysis project that
 
 ![Data Pipeline](https://github.com/VietDucFCB/PythonForDS/blob/master/pipeline.png)
 
+## Project Structure
+
+```
+IncidentMapper-USA/
+├── hadoop-docker-cluster/
+│   ├── config/
+│   │   ├── core-site.xml
+│   │   └── hdfs-site.xml
+│   ├── create-configs.sh
+│   ├── docker-compose.xml
+│   ├── create-configs.sh
+│   └── Dockerfile
+├── scripts/
+│   ├── data_stored/
+│   │   ├── load_traffic_data_to_hdfs.py
+│   │   ├── hdfs_upload.log
+│   ├── get_data/
+│   ├── GeoMapUSA/
+│   └── MapReduce/
+│       ├── preprocess_json.py
+│       ├── map_reduce.py
+├── supersetdocker/
+│   ├── superset-home/
+│   ├── docker/
+│   └── docker-compose-superset.xml
+└── README.md
+```
+
 ## Dataset Description
 
 The project works with traffic incident data from a specialized API that provides comprehensive incident information across the United States. The API returns data in GeoJSON format with the following structure:
@@ -130,39 +158,3 @@ The system processes hundreds of thousands of traffic incidents daily across all
    http://localhost:8088
    ```
 
-## Project Structure
-
-```
-IncidentMapper-USA/
-├── docker/
-│   ├── hadoop/
-│   │   ├── datanode/
-│   │   └── namenode/
-│   ├── postgres/
-│   └── superset/
-├── scripts/
-│   ├── init-hdfs.sh
-│   └── run-mapreduce.sh
-├── src/
-│   ├── data_collection.py
-│   ├── mapreduce/
-│   │   ├── mapper.py
-│   │   └── reducer.py
-│   ├── data_processing.py
-│   └── load_to_postgres.py
-├── notebooks/
-│   └── analysis.ipynb
-├── docker-compose.yml
-└── README.md
-```
-
-## Future Enhancements
-
-- Integration with machine learning models for incident prediction
-- Real-time alerting system for severe incidents
-- Extension to support international traffic data
-- Mobile application for on-the-go insights
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
