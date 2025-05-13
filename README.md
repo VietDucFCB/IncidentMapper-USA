@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Project Architecture Diagram](https://raw.githubusercontent.com/VietDucFCB/IncidentMapper-USA/main/diagram.png) 
+![Project Architecture Diagram](https://github.com/VietDucFCB/PythonForDS/blob/master/diagram.png) 
 *Note: You might need to update this link if the diagram is hosted elsewhere or if the path changes.*
 
 ## Project Overview
@@ -44,7 +44,7 @@ The system is composed of several key components working in concert:
     - Docker Compose is used to manage the lifecycle of all services.
     - Shell scripts and Python scripts are used for various setup and operational tasks.
 
-![Data Pipeline Diagram](https://raw.githubusercontent.com/VietDucFCB/IncidentMapper-USA/main/pipeline.png)
+![Data Pipeline Diagram](https://github.com/VietDucFCB/PythonForDS/blob/master/pipeline.png)
 *Note: You might need to update this link if the diagram is hosted elsewhere or if the path changes.*
 
 ## Project Structure
