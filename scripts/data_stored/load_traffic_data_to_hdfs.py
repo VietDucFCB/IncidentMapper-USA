@@ -18,7 +18,7 @@ logger = logging.getLogger()
 
 # Configuration
 CONFIG = {
-    'source_dir': r'C:\Users\kkagi\Downloads\CarIncidents\scripts\get_data\us_traffic_data_20250401_211449',
+    'source_dir': r'/home/vietducspector/Desktop/IncidentMapper-USA/scripts/get_data/us_traffic_data_20250401_211449',
     'hdfs_target_path': '/data_lake/raw/traffic_data/us',
     'user': 'VietDucFCB',
     'current_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
