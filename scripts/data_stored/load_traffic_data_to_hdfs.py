@@ -44,7 +44,7 @@ def run_command(cmd):
 
 def check_hdfs_health():
     """Check if HDFS cluster is healthy with active datanodes"""
-    success, output = run_command("docker exec namenode hdfs dfsadmin -report")
+    success, output = run_command("docker exec namenode_con hdfs dfsadmin -report")
     if success and "Live datanodes" in output:
         if "Live datanodes (0)" in output:
             logger.error("No live datanodes found! HDFS cluster is not healthy.")
@@ -66,19 +66,19 @@ def main():
         return False
 
     # Step 2: Create target directory in HDFS
-    run_command(f"docker exec namenode hdfs dfs -mkdir -p {CONFIG['hdfs_target_path']}")
+    run_command(f"docker exec namenode_con hdfs dfs -mkdir -p {CONFIG['hdfs_target_path']}")
 
     # Step 3: Create temporary directory in namenode container
     temp_dir = f"/tmp/traffic_data_{datetime.now().strftime('%Y%m%d%H%M%S')}"
-    run_command(f"docker exec namenode mkdir -p {temp_dir}")
+    run_command(f"docker exec namenode_con mkdir -p {temp_dir}")
 
     # Step 4: Copy files from Windows to Docker container
     source_path = CONFIG['source_dir'].replace('\\', '/')
     logger.info(f"Copying JSON files from {source_path} to Docker container")
-    run_command(f'docker cp "{source_path}/." namenode:{temp_dir}/')
+    run_command(f'docker cp "{source_path}/." namenode_con:{temp_dir}/')
 
     # Step 5: List files in temporary directory without using grep
-    success, file_list = run_command(f"docker exec namenode ls -1 {temp_dir}")
+    success, file_list = run_command(f"docker exec namenode_con ls -1 {temp_dir}")
 
     if not success or not file_list.strip():
         logger.error("No files found in temporary directory")
@@ -108,7 +108,7 @@ def main():
         full_path = f"{temp_dir}/{file_name}"
         target_path = f"{CONFIG['hdfs_target_path']}/{file_name}"
 
-        success, _ = run_command(f'docker exec namenode hdfs dfs -put -f "{full_path}" "{target_path}"')
+        success, _ = run_command(f'docker exec namenode_con hdfs dfs -put -f "{full_path}" "{target_path}"')
 
         if success:
             uploaded += 1
@@ -142,8 +142,8 @@ if __name__ == "__main__":
         print("\nUseful commands to interact with your data:")
         print("----------------------------------------------")
         print(f"• List files: docker exec namenode hdfs dfs -ls {CONFIG['hdfs_target_path']}")
-        print(f"• View file content: docker exec namenode hdfs dfs -cat {CONFIG['hdfs_target_path']}/[filename]")
-        print(f"• Get file info: docker exec namenode hdfs dfs -stat {CONFIG['hdfs_target_path']}/[filename]")
-        print(f"• Check file size: docker exec namenode hdfs dfs -du -h {CONFIG['hdfs_target_path']}")
+        print(f"• View file content: docker exec namenode_con hdfs dfs -cat {CONFIG['hdfs_target_path']}/[filename]")
+        print(f"• Get file info: docker exec namenode_con hdfs dfs -stat {CONFIG['hdfs_target_path']}/[filename]")
+        print(f"• Check file size: docker exec namenode_con hdfs dfs -du -h {CONFIG['hdfs_target_path']}")
     else:
         print("\nFailed to upload JSON files to HDFS. Check logs for details.")

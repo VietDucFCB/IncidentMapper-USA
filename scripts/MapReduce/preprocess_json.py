@@ -84,13 +84,13 @@ if __name__ == "__main__":
 
 # Write script to container
 print("Creating preprocessing script...")
-subprocess.run('docker exec -i namenode bash -c "cat > /tmp/preprocess_json.py"',
+subprocess.run('docker exec -i namenode_con bash -c "cat > /tmp/preprocess_json.py"',
                input=preprocessing_script.encode(),
                shell=True)
 
 # Make executable and run
 print("Running preprocessing script...")
-subprocess.run('docker exec namenode chmod +x /tmp/preprocess_json.py', shell=True)
-subprocess.run('docker exec namenode python3 /tmp/preprocess_json.py', shell=True)
+subprocess.run('docker exec namenode_con chmod +x /tmp/preprocess_json.py', shell=True)
+subprocess.run('docker exec namenode_con python3 /tmp/preprocess_json.py', shell=True)
 
 print("Preprocessing complete! Your data is now ready for MapReduce.")

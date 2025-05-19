@@ -2,11 +2,11 @@ version: "3"
 
 services:
   namenode:
-    build: .
-    container_name: namenode
+    build: . # Changed back from image: my-custom-hadoop:latest
+    container_name: namenode_con
     hostname: namenode
     ports:
-      - "9870:9870"  # Namenode web UI
+      - "9875:9870"  # Namenode web UI
       - "9000:9000"  # HDFS
     volumes:
       - hadoop_namenode:/hadoop/dfs/name
@@ -16,15 +16,15 @@ services:
     command: >
       "mkdir -p /hadoop/dfs/name &&
        # Only format if directory is empty
-       [ -z \"$(ls -A /hadoop/dfs/name)\" ] && echo Y | /opt/hadoop/bin/hdfs namenode -format || echo \"Namenode directory exists, skipping format\" &&
+       [ -z \"$$(ls -A /hadoop/dfs/name)\" ] && echo Y | /opt/hadoop/bin/hdfs namenode -format || echo \"Namenode directory exists, skipping format\" &&
        /opt/hadoop/bin/hdfs --daemon start namenode &&
        tail -f /opt/hadoop/logs/*"
     networks:
       - hadoop_network
 
   datanode1:
-    build: .
-    container_name: datanode1
+    build: . # Changed back from image: my-custom-hadoop:latest
+    container_name: datanode1_con
     hostname: datanode1
     ports:
       - "9864:9864"
@@ -43,8 +43,8 @@ services:
       - hadoop_network
 
   datanode2:
-    build: .
-    container_name: datanode2
+    build: . # Changed back from image: my-custom-hadoop:latest
+    container_name: datanode2_con
     hostname: datanode2
     ports:
       - "9865:9864"

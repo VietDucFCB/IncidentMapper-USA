@@ -10,6 +10,8 @@ services:
     env_file: docker/.env-postgresql
     image: postgres:14
     restart: unless-stopped
+    ports: # Added this section
+      - "5433:5432" # Expose PostgreSQL port to host
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
@@ -19,11 +21,13 @@ services:
 
   superset:
     env_file: docker/.env-superset
-    image: apache/superset:latest
+    build: .
+    image: superset-custom:latest # Added image name
     restart: unless-stopped
     depends_on:
       - db
       - redis
+      - superset-init  # Added superset-init dependency
     ports:
       - "8088:8088"
     volumes:
@@ -32,19 +36,22 @@ services:
       - ./docker/init:/app/docker-init
 
   superset-init:
-    image: apache/superset:latest
+    build: .
+    image: superset-custom-init:latest # Added image name
     depends_on:
       - db
       - redis
     env_file: docker/.env-superset
     volumes:
       - ./docker/init:/app/docker-init
+      - ./docker/pythonpath_dev:/app/pythonpath # Added this line to mount the config
     command: >
       bash -c "/app/docker-init/superset-init.sh"
 
   superset-worker:
     env_file: docker/.env-superset
-    image: apache/superset:latest
+    build: .
+    image: superset-custom-worker:latest # Added image name
     restart: unless-stopped
     depends_on:
       - db

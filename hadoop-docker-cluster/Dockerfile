@@ -8,7 +8,7 @@ ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 # Install required packages
 RUN apt-get update && \
-    apt-get install -y wget curl net-tools procps netcat ssh rsync && \
+    apt-get install -y wget curl net-tools procps netcat-openbsd ssh rsync python3 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

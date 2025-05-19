@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Project Architecture Diagram](https://raw.githubusercontent.com/VietDucFCB/IncidentMapper-USA/main/diagram.png) 
+![Project Architecture Diagram](https://github.com/VietDucFCB/PythonForDS/blob/master/diagram.png) 
 *Note: You might need to update this link if the diagram is hosted elsewhere or if the path changes.*
 
 ## Project Overview
@@ -44,7 +44,7 @@ The system is composed of several key components working in concert:
     - Docker Compose is used to manage the lifecycle of all services.
     - Shell scripts and Python scripts are used for various setup and operational tasks.
 
-![Data Pipeline Diagram](https://raw.githubusercontent.com/VietDucFCB/IncidentMapper-USA/main/pipeline.png)
+![Data Pipeline Diagram](https://github.com/VietDucFCB/PythonForDS/blob/master/pipeline.png)
 *Note: You might need to update this link if the diagram is hosted elsewhere or if the path changes.*
 
 ## Project Structure
@@ -52,42 +52,40 @@ The system is composed of several key components working in concert:
 ```
 IncidentMapper-USA/
 ├── README.md
-├── diagram.png  (Example placeholder for your architecture diagram)
-├── pipeline.png (Example placeholder for your data pipeline diagram)
-├── hadoop-docker-cluster/      # Configuration and Docker setup for Hadoop
+├── hadoop-docker-cluster/    
 │   ├── config/
 │   │   ├── core-site.xml
 │   │   └── hdfs-site.xml
-│   ├── create-configs.sh     # Script to generate Hadoop configs
-│   ├── docker-compose.yml    # Docker Compose for Hadoop cluster
-│   ├── Dockerfile            # Dockerfile for custom Hadoop image
-│   └── entrypoint.sh         # Entrypoint for Hadoop containers
-├── scripts/                    # All operational and processing scripts
+│   ├── create-configs.sh     
+│   ├── docker-compose.yml    
+│   ├── Dockerfile            
+│   └── entrypoint.sh         
+├── scripts/                   
 │   ├── data_stored/
-│   │   ├── load_traffic_data_to_hdfs.py # Loads raw data to HDFS
-│   │   └── hdfs_upload.log              # Log file for HDFS uploads
-│   ├── GeoMapUSA/                       # Utilities for Geo data (if any)
+│   │   ├── load_traffic_data_to_hdfs.py 
+│   │   └── hdfs_upload.log              
+│   ├── GeoMapUSA/                       
 │   │   ├── condenseGeoJSON.py
 │   │   └── state_lookup.csv
 │   ├── get_data/
-│   │   ├── getData.py                   # Fetches raw traffic data
-│   │   └── us_traffic_data_20250401_211449/ # Example raw data directory
-│   │       └── ... (JSON files for each state)
+│   │   ├── getData.py                   
+│   │   └── us_traffic_data_20250401_211449/ 
+│   │       └── ... 
 │   └── MapReduce/
-│       ├── extract_mapper.py            # Mapper script for data extraction
-│       ├── extract_reducer.py           # Reducer script for data extraction
-│       ├── map_reduce_heatmap.py        # Orchestrates the heatmap MapReduce job
-│       └── preprocess_json.py           # Preprocesses JSON files before MapReduce
-├── superset-docker/            # Configuration and Docker setup for Superset
-│   ├── docker-compose-superset.yml # Docker Compose for Superset & its dependencies
+│       ├── extract_mapper.py           
+│       ├── extract_reducer.py           
+│       ├── map_reduce.py        
+│       └── preprocess_json.py           
+├── superset-docker/            
+│   ├── docker-compose-superset.yml 
 │   ├── docker/
 │   │   ├── init/
-│   │   │   └── superset-init.sh       # Initialization script for Superset
-│   │   ├── .env-postgresql          # Environment variables for PostgreSQL (example)
-│   │   └── .env-superset            # Environment variables for Superset (example)
-│   └── superset_home/                 # Persistent storage for Superset
-│       └── superset.db                # Superset's application database (SQLite by default if not configured for Postgres)
-└── .gitignore (Recommended)
+│   │   │   └── superset-init.sh       
+│   │   ├── .env-postgresql          
+│   │   └── .env-superset           
+│   └── superset_home/               
+│       └── superset.db                
+└── .gitignore 
 ```
 
 ## Dataset Description

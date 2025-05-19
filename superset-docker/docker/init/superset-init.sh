@@ -22,7 +22,7 @@ superset init
 
 # Setup your PostgreSQL database connection
 superset set-database-uri \
-    --database-name "incidents" \
-    --uri "postgresql://incidents_user:password@your-postgres-host:5432/incidents_db"
+    --database-name "superset" \
+    --uri "postgresql://superset:superset@db:5432/superset"
 
 echo "Superset initialization completed!"
