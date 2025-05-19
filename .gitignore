@@ -1,5 +1,6 @@
 # Python virtual environment
 .venv/
+venv/
 
 # IDE specific files
 .idea/
