@@ -22,6 +22,11 @@ dist/
 # Log files
 *.log
 
+# Output files from MapReduce
+/scripts/MapReduce/output/traffic_extracteds_cleaned.csv
+/scripts/MapReduce/output/traffic_extracteds.csv
+
 # OS-specific files
 .DS_Store
 Thumbs.db
+
