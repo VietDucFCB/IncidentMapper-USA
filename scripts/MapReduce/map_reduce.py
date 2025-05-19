@@ -24,6 +24,7 @@ mapreduce_bash_script_content = f"""#!/bin/bash
 mkdir -p {container_script_dir}
 mkdir -p /tmp/mapreduce_output
 
+
 # Mapper and Reducer scripts are copied by the Python script before this bash script runs.
 
 # Make scripts executable
